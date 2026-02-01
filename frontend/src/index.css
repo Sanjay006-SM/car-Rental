@@ -1,0 +1,144 @@
+:root {
+  --primary: 220 95% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 15% 15%;
+  --secondary-foreground: 220 10% 90%;
+  --background: 220 30% 3%;
+  --foreground: 0 0% 98%;
+  --card: 220 30% 8%;
+  --card-foreground: 0 0% 98%;
+  --accent: 220 90% 65%;
+  --accent-foreground: 0 0% 100%;
+  --success: 142 70% 45%;
+  --warning: 38 92% 50%;
+  --error: 0 84% 60%;
+  --radius: 1rem;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeIn var(--transition) forwards;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.glass {
+  background: hsla(var(--card), 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsla(var(--foreground), 0.1);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px hsla(var(--primary), 0.4);
+}
+
+.btn-secondary {
+  background-color: hsla(var(--foreground), 0.1);
+  color: hsl(var(--foreground));
+}
+
+.btn-secondary:hover {
+  background-color: hsla(var(--foreground), 0.15);
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  color: hsla(var(--foreground), 0.7);
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  background: hsla(var(--foreground), 0.05);
+  border: 1px solid hsla(var(--foreground), 0.1);
+  color: hsl(var(--foreground));
+  transition: all 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 2px hsla(var(--primary), 0.2);
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--card));
+  border: 1px solid hsla(var(--foreground), 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
