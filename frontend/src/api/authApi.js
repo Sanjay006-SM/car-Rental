@@ -6,28 +6,26 @@ import API from './axios';
  */
 
 // User Endpoints
-export const userRegister = async (userData) => {
-    return await API.post('/users/register', userData);
+export const userRegister = (userData) => {
+  return API.post('/api/users/register', userData);
 };
 
-export const userLogin = async (credentials) => {
-    return await API.post('/users/login', credentials);
+export const userLogin = (credentials) => {
+  return API.post('/api/users/login', credentials);
 };
 
 // Company Endpoints
-export const companyRegister = async (companyData) => {
-    return await API.post('/companies/register', companyData);
+export const companyRegister = (companyData) => {
+  return API.post('/api/companies/register', companyData);
 };
 
-export const companyLogin = async (credentials) => {
-    return await API.post('/companies/login', credentials);
+export const companyLogin = (credentials) => {
+  return API.post('/api/companies/login', credentials);
 };
 
-const authApi = {
-    userRegister,
-    userLogin,
-    companyRegister,
-    companyLogin,
+export default {
+  userRegister,
+  userLogin,
+  companyRegister,
+  companyLogin,
 };
-
-export default authApi;
