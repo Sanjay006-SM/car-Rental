@@ -15,7 +15,7 @@ const Login = () => {
         setLoading(true);
         setError('');
 
-        const endpoint = isCompany ? '/companies/login' : '/users/login';
+        const endpoint = isCompany ? '/api/companies/login' : '/api/users/login';
 
         try {
             const { data } = await API.post(endpoint, formData);
